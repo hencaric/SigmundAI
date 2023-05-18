@@ -8,7 +8,7 @@ class Joinleave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        channel = self.bot.get_channel(775617360979034122)
+        channel = self.bot.try_channel(775617360979034122)
         embed=discord.Embed(title="Welcome!",description=f"{member.mention} just joined the server! Make sure to give them a warm welcome!", color=0x00FFFF)
         embed.add_field(name= "", value="Thank you for joining the TNF Server, make sure to check out #server-rules before sending your first message!", inline=False)
         embed.timestamp = datetime.datetime.now()
@@ -26,7 +26,7 @@ class Joinleave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        channel = self.bot.get_channel(744246685932191805)
+        channel = self.bot.try_channel(744246685932191805)
         embed=discord.Embed(title=f"User Left",description=f"{member} just left the server!", color=0x00FFFF)
         embed.set_footer(text=member.id)
         embed.set_thumbnail(url= "https://i.imgur.com/2pohyKU.png")

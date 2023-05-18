@@ -2,6 +2,7 @@ import subprocess
 from discord.ext import commands
 import discord
 from utils import Config
+from typing import Union
 
 VERSION = "1.0.0"
 INTENTS = discord.Intents.all()
@@ -20,6 +21,9 @@ class Bot(commands.Bot):
         )
         self.config = config
         self.version = VERSION
+
+    async def try_channel(self, id: int, /) -> Union[discord.abc.GuildChannel, discord.abc.PrivateChannel, discord.Thread]:
+        return self.get_channel(id) or await self.fetch_channel(id)
 
     async def setup_hook(self) -> None:
         for extension in self.config.extensions:
