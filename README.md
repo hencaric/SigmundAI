@@ -6,7 +6,7 @@ A bot for the Gjallarhorn Star Citizen Organization Discord that includes the fo
 - Various Response Capabilities
 
 ## Version
-1.0.0
+2.0.1
 
 ## Author
 https://github.com/uncleiansreadyrice
