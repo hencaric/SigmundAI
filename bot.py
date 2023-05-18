@@ -36,6 +36,10 @@ class CoreCog(commands.Cog, name="Core"):
     def __init__(self, bot: Bot) -> None:
         self.bot = bot
 
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print ("The Gjallarhorn AI is online and watching.")
+
     @commands.hybrid_command(description="Shows you some info about the bot.")
     async def info(self, ctx: commands.Context) -> None:
         embed = discord.Embed(
