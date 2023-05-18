@@ -5,8 +5,6 @@ from utils import Config
 
 VERSION = "1.0.0"
 INTENTS = discord.Intents.all()
-INTENTS.message_content = True
-INTENTS.members = True
 
 
 class Bot(commands.Bot):

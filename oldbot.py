@@ -12,8 +12,6 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.all()
-intents.message_content = True
-intents.members = True 
 
 extensions = ("embed","joinleave","moderation","responses",)
 bot = commands.Bot(command_prefix="?", intents=intents)
