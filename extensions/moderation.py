@@ -9,7 +9,6 @@ with open("bad_words.txt") as file:
 class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
 
     @commands.command(name= 'purge')
     async def purge(self, ctx, num):

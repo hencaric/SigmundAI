@@ -5,7 +5,6 @@ from discord.ext import commands
 class Joinleave(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
