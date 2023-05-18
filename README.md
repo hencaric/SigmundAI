@@ -1,4 +1,4 @@
-# gjallarhornai
+# GjallarhornAI
 A bot for the Gjallarhorn Star Citizen Organization Discord that includes the following features...
 - Moderation
 - Join and Leave Reporting
