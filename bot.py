@@ -49,5 +49,12 @@ class CoreCog(commands.Cog, name="Core"):
         embed.add_field(
             name="Version", value=f"v{VERSION}"
         )
+        view.add_item(
+            discord.ui.Button(
+                label="Source Code",
+                url="https://github.com/uncleiansreadyrice/gjallarhornai",
+                style=discord.ButtonStyle.link,
+            )
+        )
         view = discord.ui.View()
         await ctx.reply(embed=embed, view=view, mention_author=False)
