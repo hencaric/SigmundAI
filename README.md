@@ -4,7 +4,6 @@ A bot for the Gjallarhorn Star Citizen Organization Discord that includes the fo
 - Join and Leave Reporting
 - Embed Creation
 - Various Response Capabilities
-- Testing Line
 
 ## Version
 2.0.1
