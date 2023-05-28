@@ -35,7 +35,7 @@ class AnnouncementCog(commands.Cog, name="Announcements"):
 
     @commands.guild_only()
     @commands.group(
-        brief="Commands relating to the Gjallarhorn Discord news system.",
+        brief="Commands relating to the Gjallarhorn Discord announcement system.",
         aliases=["announcement", "news", "embed"],
         invoke_without_command=True,
     )
