@@ -8,30 +8,33 @@ class Responses(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message) -> None:
         if self.bot.user.mentioned_in(message):
-            print("Turlington has been mentioned.")
-            await message.channel.send(f"Hello! I am Sigmund, the Gjallarhorn AI, say `?gencommand` for more info on what I can do! If you are having any issues with my functions please tag ian `<@288522211164160010>`.")
+            await message.channel.send(f"Hello! I am Sigmund, the Gjallarhorn AI, say `?gencommand` for more info on what I can do! If you are having any issues with my functions please tag Ian `<@288522211164160010>`.")
+            
 
     @commands.command()
     async def gencommands(self, ctx):
         await ctx.send("__All commands use ? prefix__ \n**ping** - check the status of Gjallarhorn Bot\n")
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        await channel.send(f"Command list access by {author}")
+        await channel.send(f"Command list accessed by {author}")
 
     @commands.command()
     async def enforcer(self, ctx):
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        await channel.send(f"Admin command list access by {author}")
+        await channel.send(f"Admin command list accessed by {author}")
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
         if role in ctx.author.roles:
             await ctx.send("__All commands use ? prefix__ \n**kick (@user)** - kicks the mentioned user\n**ban (@user)** - bans mentioned user, must manually unban through server settings currently \n**mute (@user)** - adds muted role to user which keeps them from chatting or seeing any channels except #muted\n**purge (number)** - removes the indicated amount of messages from channel command was used in")
         else:
-            await ctx.send("Sorry, you dont have the required permissions to perform this command!")
+            await ctx.reply("Sorry, you dont have the required permissions to perform this command! If you think this was in error please tag Ian `<@288522211164160010>`.")
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send("Hello! I am here.")
+        await ctx.send(f"Hello! I am online, say `?gencommand` for more info on what I can do! If you are having any issues with my functions please tag Ian `<@288522211164160010>`.")
+        channel = self.bot.get_channel(1091976511696945182)
+        author = ctx.author.name
+        await channel.send(f"Sigmund was pinged by {author}")        
 
     @commands.command()
     async def whereami(self,ctx):
