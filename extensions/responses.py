@@ -9,7 +9,7 @@ class Responses(commands.Cog):
     async def on_message(self, message: discord.Message) -> None:
         if self.bot.user.mentioned_in(message):
             print("Turlington has been mentioned.")
-            await message.channel.send(f"Hello! I am the gjallarhorn AI, say `?command` for more info on what I can do! If you are having any issues with my functions please tag ian `<@288522211164160010>`.")
+            await message.channel.send(f"Hello! I am Sigmund, the Gjallarhorn AI, say `?gencommand` for more info on what I can do! If you are having any issues with my functions please tag ian `<@288522211164160010>`.")
 
     @commands.command()
     async def gencommands(self, ctx):
@@ -26,7 +26,6 @@ class Responses(commands.Cog):
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
         if role in ctx.author.roles:
             await ctx.send("__All commands use ? prefix__ \n**kick (@user)** - kicks the mentioned user\n**ban (@user)** - bans mentioned user, must manually unban through server settings currently \n**mute (@user)** - adds muted role to user which keeps them from chatting or seeing any channels except #muted\n**purge (number)** - removes the indicated amount of messages from channel command was used in")
-            await self.bot.logout()
         else:
             await ctx.send("Sorry, you dont have the required permissions to perform this command!")
 
@@ -36,7 +35,7 @@ class Responses(commands.Cog):
 
     @commands.command()
     async def whereami(self,ctx):
-        owner=str(ctx.guild.owner)
+        owner=str(ctx.guild.owner.name)
         icon=str(ctx.guild.icon.url)
         guild_id = str(ctx.guild.id)
         memberCount = str(ctx.guild.member_count)

@@ -7,7 +7,7 @@ import discord
 from utils import can_publish_announcements
 
 ANNOUNCEMENT_BUILDER_TIMEOUT = 1200
-EMBED_THUMBNAIL = "https://i.imgur.com/hYnELZ8.png"
+#EMBED_THUMBNAIL = "https://imgur.com/MJnM3LU.png"
 
 
 async def get_ping_message(message: discord.Message, /) -> Optional[discord.Message]:
@@ -35,7 +35,7 @@ class AnnouncementCog(commands.Cog, name="Announcements"):
 
     @commands.guild_only()
     @commands.group(
-        brief="Commands relating to the Gjallarhorn Discord announcement system.",
+        brief="Commands relating to the Gjallarhorn Discord news system.",
         aliases=["announcement", "news", "embed"],
         invoke_without_command=True,
     )
@@ -170,13 +170,13 @@ class Announcement:
         elif self.url:
             embed.description = self.url
 
-        if EMBED_THUMBNAIL:
-            embed.set_thumbnail(url=EMBED_THUMBNAIL)
+#        if EMBED_THUMBNAIL:
+#            embed.set_thumbnail(url=EMBED_THUMBNAIL)
 
         if not self.is_private:
             if self.author_id:
                 author = await bot.fetch_user(self.author_id)
-                embed.set_footer(text=f"This post was written by {author}")
+                embed.set_footer(text=f"This post was written by {author.name}")
             else:
                 embed.set_footer(text="Unknown Author")
 
@@ -330,7 +330,6 @@ class AnnouncementBuilderView(discord.ui.View):
     def __init__(self, announcement_builder: AnnouncementBuilder, /) -> None:
         super().__init__(timeout=ANNOUNCEMENT_BUILDER_TIMEOUT)
         self.announcement_builder = announcement_builder
-
     def _has_permission(self, user: discord.User) -> bool:
         return user == self.announcement_builder.owner
 

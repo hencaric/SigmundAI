@@ -37,13 +37,13 @@ class CoreCog(commands.Cog, name="Core"):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print ("The Gjallarhorn AI is online and watching.")
+        print ("Sigmund is online and watching.")
 
     @commands.hybrid_command(description="Shows you some info about the bot.")
     async def info(self, ctx: commands.Context) -> None:
         embed = discord.Embed(
             color=self.bot.config.embed_color,
-            description="The GjallarhornAI is a Discord bot created for the Gjallarhorn Organization Discord server to provide info and help with org/fleet management.",
+            description="Sigmund is a Discord bot created for the Gjallarhorn Organization Discord server to provide info and help with org/fleet management.",
         )
         embed.add_field(
             name="Version", value=f"v{VERSION}"
