@@ -14,7 +14,8 @@ class Moderation(commands.Cog):
     async def purge(self, ctx, num):
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        embed=discord.Embed(title=f"Messages have been purged",description=f"{num} messages have been deleted from {channel} by {author}.", color=0x00FFFF)
+        embed=discord.Embed(title=f"Messages have been purged",description=f"{num} messages have been deleted from {channel}.", color=0x00FFFF)
+        embed.add_field(name="Author", value=f"{author}", inline=True)   
         embed.timestamp = datetime.datetime.now()
         await channel.send(embed=embed)
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
@@ -39,7 +40,8 @@ class Moderation(commands.Cog):
     async def ban(self, ctx, user: discord.Member):
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        embed=discord.Embed(title=f"User has been banned",description=f"{user} has been banned from the server by {author}.", color=0x00FFFF)
+        embed=discord.Embed(title=f"User has been banned",description=f"{user} has been banned from the server.", color=0x00FFFF)
+        embed.add_field(name="Author", value=f"{author}", inline=True)   
         embed.timestamp = datetime.datetime.now()
         await channel.send(embed=embed)
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
@@ -57,7 +59,8 @@ class Moderation(commands.Cog):
     async def kick(self, ctx, user: discord.Member):
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        embed=discord.Embed(title=f"User has been kicked",description=f"{user} has been kicked from the server by {author}.", color=0x00FFFF)
+        embed=discord.Embed(title=f"User has been kicked",description=f"{user} has been kicked from the server.", color=0x00FFFF)
+        embed.add_field(name="Author", value=f"{author}", inline=True)   
         embed.timestamp = datetime.datetime.now()
         await channel.send(embed=embed)
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
@@ -75,7 +78,8 @@ class Moderation(commands.Cog):
     async def mute(self,ctx, user: discord.Member):
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        embed=discord.Embed(title=f"User has been muted",description=f"{user} has been muted by {author}.", color=0x00FFFF)
+        embed=discord.Embed(title=f"User has been muted",description=f"{user} has been muted.", color=0x00FFFF)
+        embed.add_field(name="Author", value=f"{author}", inline=True)   
         embed.timestamp = datetime.datetime.now()
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
         if role in ctx.author.roles:
@@ -95,7 +99,8 @@ class Moderation(commands.Cog):
     async def unmute(self, ctx, user: discord.Member):
         channel = self.bot.get_channel(1091976511696945182)
         author = ctx.author.name
-        embed=discord.Embed(title=f"User has been unmuted",description=f"{user} has been unmuted by {author}.", color=0x00FFFF)
+        embed=discord.Embed(title=f"User has been unmuted",description=f"{user} has been unmuted.", color=0x00FFFF)
+        embed.add_field(name="Author", value=f"{author}", inline=True)   
         embed.timestamp = datetime.datetime.now()
         role = discord.utils.get(ctx.guild.roles, name="Enforcer")
         if role in ctx.author.roles:
