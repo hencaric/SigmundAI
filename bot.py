@@ -37,7 +37,7 @@ class CoreCog(commands.Cog, name="Core"):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print ("Sigmund is online and watching.")
+        print ("Sigmund is online and watching!")
 
     @commands.hybrid_command(description="Shows you some info about the bot.")
     async def info(self, ctx: commands.Context) -> None:
