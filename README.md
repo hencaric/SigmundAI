@@ -9,7 +9,7 @@ A bot for the Gjallarhorn Star Citizen Organization Discord that includes the fo
 2.1.0
 
 ## Author
-https://github.com/uncleiansreadyrice
+https://github.com/heimriceguy
 
 
 
