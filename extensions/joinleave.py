@@ -11,7 +11,7 @@ class Joinleave(commands.Cog):
         if member.guild.id == 978414466892959756:
             channel = await self.bot.try_channel(978420380748365885)
             embed=discord.Embed(title="Welcome!",description=f"{member.mention} just joined the server! Make sure to give them a warm welcome!", color=0x00FFFF)
-            embed.add_field(name= "", value="Thank you for joining the Gjallarhorn Server, make sure to check out <#1003443965447651359> before sending your first message!", inline=False)
+            embed.add_field(name= "", value="Thank you for joining the Gjallarhorn Server, make sure to check out <#1197353113342984242> before sending your first message!", inline=False)
             embed.timestamp = datetime.datetime.now()
             embed.set_thumbnail(url=f"{member.avatar}")
             await channel.send(embed=embed)
@@ -25,7 +25,7 @@ class Joinleave(commands.Cog):
             await channel.send(embed=embed)
             default_role = discord.utils.get(member.guild.roles, id=1081624269009715220)
             await member.add_roles(default_role)
-            await member.send("Welcome to the Gjallarhorn server, we are happy to have you here! Please be sure to check out https://discord.com/channels/978414466892959756/1003443965447651359 and when you are done get with an officer or commander for next steps.")
+            await member.send("Welcome to the Gjallarhorn server, we are happy to have you here! Please be sure to check out <#1197353113342984242> and when you are done get with an officer or commander for next steps.")
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):

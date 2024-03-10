@@ -3,13 +3,16 @@ A bot for the Gjallarhorn Star Citizen Organization Discord that includes the fo
 - Moderation
 - Join and Leave Reporting
 - Embed Creation
-- Various Response Capabilities
+- Fleet, Equipment, and Personnel Management
+
+- Join https://discord.gg/7UXzMqdQws for the best Star Citizen organization around
 
 ## Version
 2.1.0
 
 ## Author
-https://github.com/heimriceguy
+Ian (hencaric)
+https://github.com/hencaric
 
 
 

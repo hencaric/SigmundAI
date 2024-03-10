@@ -9,7 +9,12 @@ class Responses(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message) -> None:
         if self.bot.user.mentioned_in(message):
-            await message.channel.send(f"Hello! I am Sigmund, the Gjallarhorn AI, say `?gencommand` for more info on what I can do! If you are having any issues with my functions please tag Ian `<@288522211164160010>`.")
+            if message.mention_everyone:
+                return
+#            await message.channel.send(f"Hello! I am Sigmund, the Gjallarhorn AI, say `^gencommands` for a list of what I can do! If you are having any issues with my functions please tag Ian `<@288522211164160010>`.")
+            embed=discord.Embed(title=f"Hello I am Sigmund, the Gjallarhorn AI!",description=f"**^gencommands** for the general command list\n**^enforcer** for the admin command list.\n\nIf you are having any issues with my functions please tag <@288522211164160010>", color=0x00FFFF)
+            embed.timestamp = datetime.datetime.now()
+            await message.channel.send(embed=embed) 
             
     @commands.command(description='Ping?')
     async def ping(self, ctx):
@@ -17,7 +22,7 @@ class Responses(commands.Cog):
 
     @commands.command()
     async def gencommands(self, ctx):
-        embed=discord.Embed(title=f"General Command List",description=f"__All commands use ? prefix__ \n**ping** - check the status of Gjallarhorn Bot\n", color=0x00FFFF)
+        embed=discord.Embed(title=f"General Command List",description=f"__All commands use ^ prefix__ \n**ping** - check the status of Gjallarhorn Bot\n", color=0x00FFFF)
         embed.timestamp = datetime.datetime.now()
         await ctx.reply(embed=embed)        
         channel = self.bot.get_channel(1091976511696945182)
@@ -26,6 +31,7 @@ class Responses(commands.Cog):
         embed.add_field(name="Author", value=f"{author}", inline=True)   
         embed.timestamp = datetime.datetime.now()
         await channel.send(embed=embed)
+        
     @commands.command()
     async def enforcer(self, ctx):
         channel = self.bot.get_channel(1091976511696945182)
